@@ -9,6 +9,8 @@ export { COLORS }
 
 export { stdout }
 
+const RESOLVED_IPS = new Set();
+
 export async function resolve(options) {
   const { host } = options
   const ips = []
@@ -38,7 +40,10 @@ export async function resolve(options) {
 
       ips.push(ipData)
 
+      if (RESOLVED_IPS.has(ip)) return;
+
       const ping = new Ping(ip)
+      RESOLVED_IPS.add(ip);
 
       ping.onResponse(res => {
         ipData.received ||= 0
