@@ -16,6 +16,8 @@ export { COLORS };
 
 export { stdout };
 
+const RESOLVED_IPS = new Set();
+
 export async function resolve(options) {
   const { host } = options;
   const hostSetting = new HostSetting(host);
