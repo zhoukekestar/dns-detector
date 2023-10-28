@@ -1,5 +1,5 @@
 {
-  "name": "dns-detector",
+  "name": "dns-detectors",
   "version": "1.2.0",
   "description": "A nodejs cli tool to resolve host's IPs",
   "type": "module",
